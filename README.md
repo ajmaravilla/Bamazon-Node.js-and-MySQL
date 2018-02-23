@@ -5,9 +5,9 @@ In this activity, I'll be creating an Amazon-like storefront with the MySQL skil
 
 ### Customer Instructions
 1. Run node in terminal: `node bamazonCustomer.js`
-    ![step1](/images/step1.PNG)
+    ![step1](/assets/images/Step1.PNG)
 2. Enter the ID and quantity of the product you wish to purchase
     * The total will be displayed after entering the quantity
     * But please be aware that if you order more than what's in stock, your order will be incomplete
-        ![step2a](/images/step2a.PNG)
+        ![step2a](/assets/images/step2a.PNG)
 
