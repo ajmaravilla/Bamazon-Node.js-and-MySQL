@@ -64,7 +64,7 @@ function displayProducts() {
         t.cell('Product Name', product.product_name)
         t.cell('Department', product.department_name)
         t.cell('Price', product.product_price, Table.number(2))
-        t.cell('Quantity', product.stock_qty)
+        t.cell('Quantity', product.stock_quantity)
         t.newRow()
       })
       console.log(t.toString());
@@ -76,7 +76,7 @@ function displayProducts() {
 };
 
 function displayLowInv() {
-  var query = connection.query("SELECT * FROM products WHERE stock_qty < 5", function (err, res) {
+  var query = connection.query("SELECT * FROM products WHERE stock_quantity < 5", function (err, res) {
     if (err) {
       throw err;
     } else {
@@ -91,7 +91,7 @@ function displayLowInv() {
         t.cell('Product Name', product.product_name)
         t.cell('Department', product.department_name)
         t.cell('Price', product.product_price, Table.number(2))
-        t.cell('Quantity', product.stock_qty)
+        t.cell('Quantity', product.stock_quantity)
         t.newRow()
       })
       console.log(t.toString());
@@ -118,12 +118,12 @@ function addInventory() {
     var productID = input.id;
     var productQty = input.quantity;
 
-    var query = connection.query(`UPDATE products SET stock_qty = stock_qty + ${productQty} 
+    var query = connection.query(`UPDATE products SET stock_quantity = stock_quantity + ${productQty} 
         WHERE item_ID = ${productID}`, function (err, res) {
       if (err) {
         throw err;
       } else {
-        //var productTotal = res[0].stock_qty; <-- this does not return the table so cannot select
+        //var productTotal = res[0].stock_quantity; <-- this does not return the table so cannot select
         console.log(`Successfully added qty. ${productQty}`);
         console.log('');
         prompt();
@@ -160,7 +160,7 @@ function addProduct() {
     var productPrice = input.price;
     var productQty = input.quantity;
 
-    var query = connection.query(`INSERT INTO products (product_name, department_name, product_price, stock_qty) 
+    var query = connection.query(`INSERT INTO products (product_name, department_name, product_price, stock_quantity) 
     VALUES (?, ?, ?, ?)`, [productName, productDept, productPrice, productQty], function (err, res) {
       if (err) {
         throw err;
