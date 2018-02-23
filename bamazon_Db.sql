@@ -5,7 +5,7 @@ USE bamazon_Db;
 
 CREATE TABLE products (
     item_ID INT AUTO_INCREMENT NOT NULL,
-    product_name VARCHAR(150) NULL,
+    product_name VARCHAR(100) NULL,
     department_name VARCHAR(100) NULL,
     product_price DECIMAL(10,2) NULL,
     stock_quantity INTEGER (11) NULL,
@@ -17,7 +17,7 @@ SELECT * FROM products;
 INSERT INTO products (product_name, department_name, product_price, stock_quantity)
     VALUES
    ('Bang & Olufsen BeoPlay H8i Black Wireless Headphones', 'electronics', 399, 10),
-   ('Apple Watch Hermès Stainless Steel Case with Ébène Barenia Leather Single Tour Deployment Buckle', 'electronics', 1399, 5),
+   ('Apple Watch Hermès Stainless Steel Case', 'electronics', 1399, 5),
    ('Ralph Lauren Custom Slim Fit Mesh Polo', 'clothing', 85, 10),
    ('POLO RALPH LAUREN Merino-Silk-Cashmere Sweater', 'clothing', 185, 10),
    ('Ralph Lauren Broughton DOF Glass', 'houseware', 95, 8),

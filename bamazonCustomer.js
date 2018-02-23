@@ -42,7 +42,8 @@ function query() {
         t.cell('Product Name', product.product_name)
         t.cell('Department', product.department_name)
         t.cell('Price', product.product_price, Table.number(2))
-        t.cell('Quantity', product.stock_qty)
+        t.cell('Quantity', product.stock_quantity)
+        
         t.newRow()
       })
       console.log(t.toString());
@@ -71,17 +72,21 @@ function prompt() {
     var query = connection.query(`SELECT * FROM products WHERE item_ID = ${buyerID}`, function (err, res) {
       if (err) {
         throw err;
-      } else if (buyerQty <= res[0].stock_qty) {
+
+      } else if (buyerQty <= res[0].stock_quantity) {
         var totalCost = buyerQty * res[0].product_price;
         // console.log(res) // TESTING
-        var query1 = connection.query(`UPDATE products SET stock_qty = stock_qty - ${buyerQty} WHERE item_ID = ${buyerID}`,
+        var query1 = connection.query(`UPDATE products SET stock_quantity = stock_quantity - ${buyerQty} WHERE item_ID = ${buyerID}`,
+
           function (err, res) {
             console.log(`Order completed, your total cost is $${totalCost}.00`)
             console.log('')
             prompt();
           }
         )
-      } else if (buyerQty > res[0].stock_qty) {
+
+      } else if (buyerQty > res[0].stock_quantity) {
+        
         console.log('Order incomplete, insufficient quanitity')
         console.log('')
         prompt();
