@@ -7,8 +7,8 @@ In this activity, I'll be creating an Amazon-like storefront with the MySQL skil
 1. Run the bamazonCustomer.js node in terminal: `node bamazonCustomer.js`
     ![Step1](/assets/Images/Step1.png)
 2. Enter the ID and quantity of the product you wish to purchase
-    * The total will be displayed after entering the quantity
-    * But please be aware that if you order more than what's in stock, your order will be incomplete
+    * The total cost will be displayed after entering the quantity
+    * If the quantity entered is more than what is available, then the order will be incomplete
         ![step2a](/assets/Images/step2.png)
 
 ### Manager Instructions
@@ -19,14 +19,13 @@ In this activity, I'll be creating an Amazon-like storefront with the MySQL skil
     * View Low Inventory
     * Add to Inventory
     * Add New Product
-3. Selecting 'View Product' will show all the products with information in the store
+3. Selecting 'View Product' will display all products in inventory
     ![mgrstep2](/assets/Images/mgrstep2.png)
-4. Selecting 'View Low Inventory' will show all inventory with stock quantity under 5; in this example Product ID 2 is below 5
+4. Selecting 'View Low Inventory' will display products with inventory number less than 5
     ![mgrstep3](/assets/Images/mgrstep3.png)
-5. Selecting 'Add to Inventory' will prompt you to add to product stock using ID key and quantity
+5. Selecting 'Add to Inventory' will allow you to increase the inventory number of a product; enter the product ID, then enter the additional number of products you are adding; If successful, the system will dislay the following message: Successully added qty. #
     ![mgrstep4](/assets/Images/mgrstep4.png)
-6. Selecting 'Add New Product' will prompt you to add new product (name, department, price and quantity)
-it will return 'New Product Added' upon successfully addition
+6. Selecting 'Add New Product' will allow you to add a new product to the inventory; system will prompt you to add new product (name, department, price and quantity); If successful, the system will display the following message: New product added
     ![mgrstep5](/assets/Images/mgrstep5.png)
 7. Below is the full Manager Panel
     ![mgrstep6](/assets/Images/mgrstep6.png)
