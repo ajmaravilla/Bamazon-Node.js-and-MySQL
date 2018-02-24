@@ -1,0 +1,27 @@
+{
+  "name": "Bamazon-Node.js-and-MySQL",
+  "version": "1.0.0",
+  "description": "In this activity, I'll be creating an Amazon-like storefront with the MySQL skills learned this week. The app will take in orders from customers and deplete stock from the store's inventory.",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "easy-table": "^1.1.1",
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0",
+    "ysql": "^0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajmaravilla/Bamazon-Node.js-and-MySQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajmaravilla/Bamazon-Node.js-and-MySQL/issues"
+  },
+  "homepage": "https://github.com/ajmaravilla/Bamazon-Node.js-and-MySQL#readme"
+}
