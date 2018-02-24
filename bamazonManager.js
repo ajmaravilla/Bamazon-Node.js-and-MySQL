@@ -28,7 +28,7 @@ connection.connect(function (err) {
 function prompt() {
   inquirer.prompt([{
     type: "list",
-    message: "Please select a menu option: ",
+    message: "Select a menu option: ",
     name: "task",
     choices: ["View Sale Product", "View Low Inventory", "Add to Inventory", "Add New Product"]
   }]).then(function (task) {
@@ -111,7 +111,7 @@ function addInventory() {
     },
     {
       type: "input",
-      message: "Please type quantity of the product to add: ",
+      message: "Enter the quantity of the product to add: ",
       name: "quantity"
     }
   ]).then(function (input) {
@@ -124,7 +124,7 @@ function addInventory() {
         throw err;
       } else {
         //var productTotal = res[0].stock_quantity; <-- this does not return the table so cannot select
-        console.log(`Successfully added qty. ${productQty}`);
+        console.log(`Product inventory updated ${productQty}`);
         console.log('');
         prompt();
       }
@@ -136,22 +136,22 @@ function addProduct() {
 
   inquirer.prompt([{
       type: "input",
-      message: "Please type name of new product: ",
+      message: "Enter the name of new product: ",
       name: "name"
     },
     {
       type: "input",
-      message: "Please type department for new product: ",
+      message: "Enter the department for new product: ",
       name: "depart"
     },
     {
       type: "input",
-      message: "Please type price of new product: ",
+      message: "Enter the price of new product: ",
       name: "price"
     },
     {
       type: "input",
-      message: "Please type quantity of new product: ",
+      message: "E`  nter the quantity of new product: ",
       name: "quantity"
     }
   ]).then(function (input) {

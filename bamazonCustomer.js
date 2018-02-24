@@ -43,7 +43,6 @@ function query() {
         t.cell('Department', product.department_name)
         t.cell('Price', product.product_price, Table.number(2))
         t.cell('Quantity', product.stock_quantity)
-        
         t.newRow()
       })
       console.log(t.toString());
@@ -57,12 +56,12 @@ function query() {
 function prompt() {
   inquirer.prompt([{
       type: "input",
-      message: "Please enter ID of the product to purchase: ",
+      message: "Enter ID of the product to purchase: ",
       name: "id"
     },
     {
       type: "input",
-      message: "Please enter the quantity you wish to purchase: ",
+      message: "Enter the quantity you wish to purchase: ",
       name: "quantity"
     }
   ]).then(function (input) {
@@ -79,7 +78,7 @@ function prompt() {
         var query1 = connection.query(`UPDATE products SET stock_quantity = stock_quantity - ${buyerQty} WHERE item_ID = ${buyerID}`,
 
           function (err, res) {
-            console.log(`Order completed, your total cost is $${totalCost}.00`)
+            console.log(`Order complete, Total cost = $${totalCost}.00`)
             console.log('')
             prompt();
           }
@@ -87,7 +86,7 @@ function prompt() {
 
       } else if (buyerQty > res[0].stock_quantity) {
         
-        console.log('Order incomplete, insufficient quanitity')
+        console.log('Insufficient Inventory to complete order')
         console.log('')
         prompt();
       }
